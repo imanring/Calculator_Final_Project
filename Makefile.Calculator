@@ -31,8 +31,8 @@ LIBPREFIX     = lib
 LIBSUFFIX     = 
 GENFLAGS      = -O
 LDLIBS        = -ldl $(subst lib,-l,$(sort $(basename $(notdir $(wildcard /usr/lib/librt.so /lib/librt.so))))) -lpthread
-OBJS          = Expr_Command_Factory$(OBJEXT) Stack_Expr_Command_Factory$(OBJEXT) Command$(OBJEXT) Binary_Command$(OBJEXT) Add_Command$(OBJEXT) Subtract_Command$(OBJEXT) Multiply_Command$(OBJEXT) Divide_Command$(OBJEXT) Modulus_Command$(OBJEXT) Number_Command$(OBJEXT) main$(OBJEXT)
-SRC           = Expr_Command_Factory.cpp Stack_Expr_Command_Factory.cpp Command.cpp Binary_Command.cpp Add_Command.cpp Subtract_Command.cpp Multiply_Command.cpp Divide_Command.cpp Modulus_Command.cpp Number_Command.cpp main.cpp
+OBJS          = Expr_Builder$(OBJEXT) Expr_Tree_Builder$(OBJEXT) Expr_Node$(OBJEXT) Binary_Node$(OBJEXT) Add_Node$(OBJEXT) Subtract_Node$(OBJEXT) Multiply_Node$(OBJEXT) Divide_Node$(OBJEXT) Modulus_Node$(OBJEXT) Number_Node$(OBJEXT) main$(OBJEXT)
+SRC           = Expr_Builder.cpp Expr_Tree_Builder.cpp Expr_Node.cpp Binary_Node.cpp Add_Node.cpp Subtract_Node.cpp Multiply_Node.cpp Divide_Node.cpp Modulus_Node.cpp Number_Node.cpp main.cpp
 LINK.cc       = $(LD) $(LDFLAGS)
 EXPORTFLAGS   = 
 DEPLIBS       = $(foreach lib, , $(foreach libpath, ., $(wildcard $(libpath)/lib$(lib).a)))
@@ -50,35 +50,35 @@ $(BIN): $(OBJS) $(DEPLIBS)
 generated: $(GENERATED_DIRTY)
 	@-:
 
-Expr_Command_Factory$(OBJEXT): Expr_Command_Factory.cpp
-	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) Expr_Command_Factory.cpp
+Expr_Builder$(OBJEXT): Expr_Builder.cpp
+	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) Expr_Builder.cpp
 
-Stack_Expr_Command_Factory$(OBJEXT): Stack_Expr_Command_Factory.cpp
-	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) Stack_Expr_Command_Factory.cpp
+Expr_Tree_Builder$(OBJEXT): Expr_Tree_Builder.cpp
+	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) Expr_Tree_Builder.cpp
 
-Command$(OBJEXT): Command.cpp
-	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) Command.cpp
+Expr_Node$(OBJEXT): Expr_Node.cpp
+	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) Expr_Node.cpp
 
-Binary_Command$(OBJEXT): Binary_Command.cpp
-	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) Binary_Command.cpp
+Binary_Node$(OBJEXT): Binary_Node.cpp
+	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) Binary_Node.cpp
 
-Add_Command$(OBJEXT): Add_Command.cpp
-	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) Add_Command.cpp
+Add_Node$(OBJEXT): Add_Node.cpp
+	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) Add_Node.cpp
 
-Subtract_Command$(OBJEXT): Subtract_Command.cpp
-	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) Subtract_Command.cpp
+Subtract_Node$(OBJEXT): Subtract_Node.cpp
+	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) Subtract_Node.cpp
 
-Multiply_Command$(OBJEXT): Multiply_Command.cpp
-	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) Multiply_Command.cpp
+Multiply_Node$(OBJEXT): Multiply_Node.cpp
+	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) Multiply_Node.cpp
 
-Divide_Command$(OBJEXT): Divide_Command.cpp
-	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) Divide_Command.cpp
+Divide_Node$(OBJEXT): Divide_Node.cpp
+	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) Divide_Node.cpp
 
-Modulus_Command$(OBJEXT): Modulus_Command.cpp
-	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) Modulus_Command.cpp
+Modulus_Node$(OBJEXT): Modulus_Node.cpp
+	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) Modulus_Node.cpp
 
-Number_Command$(OBJEXT): Number_Command.cpp
-	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) Number_Command.cpp
+Number_Node$(OBJEXT): Number_Node.cpp
+	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) Number_Node.cpp
 
 main$(OBJEXT): main.cpp
 	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) main.cpp
