@@ -6,7 +6,7 @@
 class Expr_Node {
 public:
 	Expr_Node ();
-	virtual ~Expr_Node() = 0;
+	//virtual ~Expr_Node() = 0;
 	virtual int eval() = 0;
 
 	virtual int precedence() = 0;
