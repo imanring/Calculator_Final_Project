@@ -17,12 +17,11 @@ int main () {
 	expr->setLeft(n1);
 	expr->setRight(n2);
 	*/
-	Expr_Tree_Builder equ = Expr_Tree_Builder();
-	equ.build_number(5);
-	equ.build_add_operator();
-	equ.build_number (4);
-	Expr_Node * expr = equ.get_expression();
-	int result = expr->eval();
+	Expr_Tree_Builder * equ = new Expr_Tree_Builder();
+	equ->build_number(5);
+	equ->build_add_operator();
+	equ->build_number (4);
+	int result = equ->get_expression()->eval();
 	std::cout<<result<<std::endl;
-	delete expr;
+	delete equ;
 }

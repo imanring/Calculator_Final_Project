@@ -11,8 +11,8 @@ right_ (right)
 { }
 
 Binary_Expr_Node::~Binary_Expr_Node () {
-	delete left_;
-	delete right_;
+	delete this->left_;
+	delete this->right_;
 }
 
 void Binary_Expr_Node::setLeft (Expr_Node * left) {

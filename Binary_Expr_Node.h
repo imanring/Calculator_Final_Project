@@ -7,7 +7,7 @@ class Binary_Expr_Node : public Expr_Node {
 public:
 	Binary_Expr_Node ();
 	Binary_Expr_Node (Expr_Node * left, Expr_Node * right);
-	~Binary_Expr_Node ();
+	~Binary_Expr_Node();
 	virtual int eval () = 0;
 	void setLeft (Expr_Node * left);
 	void setRight (Expr_Node * right);

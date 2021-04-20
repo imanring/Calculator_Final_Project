@@ -6,6 +6,8 @@
 class Number_Node : public Expr_Node { 
 public:
 	Number_Node(int val);
+	
+	//~Number_Node();
 
 	int eval();
 

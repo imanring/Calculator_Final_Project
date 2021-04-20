@@ -7,7 +7,7 @@
 class Expr_Tree_Builder : public Expr_Builder {
 public:
 	Expr_Tree_Builder ();
-	~Expr_Builder ();
+	~Expr_Tree_Builder ();
 	void build_number (int num);
 	void build_add_operator ();
 	/*void build_subtract_operator ();

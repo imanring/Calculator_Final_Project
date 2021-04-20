@@ -2,3 +2,5 @@
 
 Expr_Node::Expr_Node () 
 { }
+
+Expr_Node::~Expr_Node () {}

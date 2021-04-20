@@ -4,6 +4,8 @@ Number_Node::Number_Node (int val)
 : val_ (val)
 { }
 
+//Number_Node::~Number_Node() {}
+
 int Number_Node::eval () {
 	return this->val_;
 }

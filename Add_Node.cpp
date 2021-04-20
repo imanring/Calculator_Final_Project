@@ -3,6 +3,12 @@
 Add_Node::Add_Node ()
 { }
 
+/*Add_Node::~Add_Node() {
+	std::cout<<"Visisted"<<std::endl;
+	delete this->left_;
+	delete this->right_;
+}*/
+
 int Add_Node::eval (){
 	return this->left_->eval()+this->right_->eval ();
 }

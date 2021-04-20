@@ -6,6 +6,7 @@
 class Add_Node : public Binary_Expr_Node {
 public:
 	Add_Node ();
+	//~Add_Node ();
 	int eval ();
 	int precedence();
 	void printName();
