@@ -1,7 +1,7 @@
 #include "Subtract_Node.h"
 
 Subtract_Node::Subtract_Node ()
-: Binary_Command () { }
+{ }
 
 int Subtract_Node::eval () {
 	return this->left_->eval()-this->right_->eval();

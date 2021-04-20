@@ -1,9 +1,9 @@
 #ifndef MULTIPLY_NODE_H_EXISTS
 #define MULTIPLY_NODE_H_EXISTS
 
-#include "Binary_Node.h"
+#include "Binary_Expr_Node.h"
 
-class Multiply_Node : public Binary_Node {
+class Multiply_Node : public Binary_Expr_Node {
 public:
 	Multiply_Node ();
 

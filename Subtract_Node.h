@@ -1,9 +1,9 @@
 #ifndef SUBTRACT_NODE_H_EXISTS
 #define SUBTRACT_NODE_H_EXISTS
 
-#include "Binary_Node.h"
+#include "Binary_Expr_Node.h"
 
-class Subtract_Node : public Binary_Node {
+class Subtract_Node : public Binary_Expr_Node {
 public:
 	Subtract_Node ();
 

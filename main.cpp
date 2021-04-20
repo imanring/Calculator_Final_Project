@@ -11,8 +11,9 @@
 int main () {
 	Expr_Node * n1 = new Number_Node(5);
 	Expr_Node * n2 = new Number_Node(4);
-	Expr_Node * expr = new Add_Node (n1,n2);
-
+	Add_Node * expr = new Add_Node ();
+	expr->setLeft(n1);
+	expr->setRight(n2);
 	int result = expr->eval();
 	std::cout<<result<<std::endl;
 	delete expr;

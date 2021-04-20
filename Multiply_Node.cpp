@@ -3,7 +3,7 @@
 Multiply_Node::Multiply_Node ()
 { }
 
-int Multiply_Command::eval() {
+int Multiply_Node::eval() {
 	return this->left_->eval () * this->right_->eval ();
 }
 

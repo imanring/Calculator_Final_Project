@@ -1,9 +1,9 @@
 #ifndef DIVIDE_NODE_H_EXISTS
 #define DIVIDE_NODE_H_EXISTS
 
-#include "Binary_Node.h"
+#include "Binary_Expr_Node.h"
 
-class Divide_Node : public Binary_Node { 
+class Divide_Node : public Binary_Expr_Node { 
 public:
 	Divide_Node ();
 

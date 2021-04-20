@@ -5,7 +5,7 @@
 
 class Number_Node : public Expr_Node { 
 public:
-	Number_Command(int val);
+	Number_Node(int val);
 
 	int eval();
 

@@ -1,9 +1,9 @@
 #ifndef MODULUS_NODE_H_EXISTS
 #define MODULUS_NODE_H_EXISTS
 
-#include "Binary_Node.h"
+#include "Binary_Expr_Node.h"
 
-class Modulus_Node : public Binary_Node { 
+class Modulus_Node : public Binary_Expr_Node { 
 public:
 	Modulus_Node();
 
