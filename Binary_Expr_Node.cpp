@@ -24,3 +24,6 @@ void Binary_Expr_Node::setRight (Expr_Node * right) {
 	this->right_ = right;
 }
 
+Expr_Node * Binary_Expr_Node::getRight () {
+	return this->right_;
+}

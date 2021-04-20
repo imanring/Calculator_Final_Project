@@ -11,6 +11,7 @@ public:
 	virtual int eval () = 0;
 	void setLeft (Expr_Node * left);
 	void setRight (Expr_Node * right);
+	Expr_Node * getRight();
 	virtual int precedence() = 0;
 	virtual void printName() = 0;
 protected:
