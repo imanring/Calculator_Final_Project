@@ -2,11 +2,12 @@ project (Calculator) {
 	exename = Calculator
 	install = .
 	specific(make){
-		compile_flags += -std=c++11
+		compile_flags += -std=c++11 -g
 	}
 	Source_Files {
 		Expr_Builder.cpp
 		Expr_Tree_Builder.cpp
+		Calculator.cpp
 		Expr_Node.cpp
 		Binary_Expr_Node.cpp
 		Add_Node.cpp
@@ -17,5 +18,10 @@ project (Calculator) {
 		Number_Node.cpp
 		main.cpp
 		//files
+	}
+	Template_Files {
+		Array_Base.cpp
+		Array.cpp
+		Stack.cpp
 	}
 }
