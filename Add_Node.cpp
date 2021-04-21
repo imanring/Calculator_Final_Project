@@ -19,4 +19,8 @@ int Add_Node::precedence() {
 
 void Add_Node::printName() {
 	std::cout<<"Add Command"<<std::endl;
+	std::cout<<"Left: "<<std::endl;
+	left_->printName();
+	std::cout<<"Right: "<<std::endl;
+	right_->printName();
 }

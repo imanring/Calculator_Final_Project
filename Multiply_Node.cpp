@@ -13,4 +13,8 @@ int Multiply_Node::precedence() {
 
 void Multiply_Node::printName() {
 	std::cout<<"Multiply Command"<<std::endl;
+	std::cout<<"Left: "<<std::endl;
+	left_->printName();
+	std::cout<<"Right: "<<std::endl;
+	right_->printName();
 }

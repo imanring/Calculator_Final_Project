@@ -16,10 +16,9 @@ int main () {
 	equ->build_add_operator();
 	equ->build_number (4);
 	equ->build_multiply_operator();
-	equ->inOrder(equ->get_expression());
 	equ->build_number (6);
+	equ->get_expression();
 	int result = equ->get_expression()->eval();
-	equ->inOrder(equ->get_expression());
 	std::cout<<result<<std::endl;
 	delete equ;
 }

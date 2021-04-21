@@ -3,6 +3,7 @@
 
 #include "Expr_Builder.h"
 #include "Expr_Node.h"
+#include "Stack.h"
 
 class Expr_Tree_Builder : public Expr_Builder {
 public:
@@ -20,6 +21,9 @@ public:
 	Expr_Node * get_expression ();
 private:
 	Expr_Node * head_;
+	Stack<Expr_Node *> nodes_;
+	Stack<Binary_Expr_Node *> ops_;
+	Stack<int> parenthesisCount;
 };
 
 #endif
