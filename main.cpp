@@ -13,9 +13,9 @@
 int main () {
 	Expr_Tree_Builder * equ = new Expr_Tree_Builder();
 	equ->build_number(5);
-	equ->build_add_operator();
+	equ->build_subtract_operator();
 	equ->build_number (4);
-	equ->build_multiply_operator();
+	equ->build_modulus_operator();
 	equ->build_number (6);
 	equ->get_expression();
 	int result = equ->get_expression()->eval();

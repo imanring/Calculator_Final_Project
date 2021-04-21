@@ -4,6 +4,7 @@
 #include "Expr_Builder.h"
 #include "Expr_Node.h"
 #include "Stack.h"
+#include "Calculator.h"
 
 class Expr_Tree_Builder : public Expr_Builder {
 public:
@@ -11,19 +12,15 @@ public:
 	~Expr_Tree_Builder ();
 	void build_number (int num);
 	void build_add_operator ();
-	//void build_subtract_operator ();
+	void build_subtract_operator ();
 	void build_multiply_operator ();
-	/* void build_divide_operator ();
+	void build_divide_operator ();
 	void build_modulus_operator ();
 	void build_open_parenthesis ();
-	void build_close_parenthesis ();*/
-	void inOrder(Expr_Node * top);
+	void build_close_parenthesis ();
 	Expr_Node * get_expression ();
 private:
-	Expr_Node * head_;
-	Stack<Expr_Node *> nodes_;
-	Stack<Binary_Expr_Node *> ops_;
-	Stack<int> parenthesisCount;
+	Stack<Calculator> expressions;
 };
 
 #endif
