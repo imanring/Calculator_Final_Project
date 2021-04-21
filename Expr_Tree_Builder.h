@@ -10,12 +10,13 @@ public:
 	~Expr_Tree_Builder ();
 	void build_number (int num);
 	void build_add_operator ();
-	/*void build_subtract_operator ();
+	//void build_subtract_operator ();
 	void build_multiply_operator ();
-	void build_divide_operator ();
+	/* void build_divide_operator ();
 	void build_modulus_operator ();
 	void build_open_parenthesis ();
 	void build_close_parenthesis ();*/
+	void inOrder(Expr_Node * top);
 	Expr_Node * get_expression ();
 private:
 	Expr_Node * head_;

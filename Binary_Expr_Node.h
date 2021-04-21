@@ -12,6 +12,7 @@ public:
 	void setLeft (Expr_Node * left);
 	void setRight (Expr_Node * right);
 	Expr_Node * getRight();
+	Expr_Node * getLeft();
 	virtual int precedence() = 0;
 	virtual void printName() = 0;
 protected:

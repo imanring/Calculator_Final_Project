@@ -23,7 +23,9 @@ void Binary_Expr_Node::setLeft (Expr_Node * left) {
 void Binary_Expr_Node::setRight (Expr_Node * right) {
 	this->right_ = right;
 }
-
+Expr_Node * Binary_Expr_Node::getLeft () {
+	return this->left_;
+}
 Expr_Node * Binary_Expr_Node::getRight () {
 	return this->right_;
 }

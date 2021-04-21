@@ -11,17 +11,15 @@
 
 
 int main () {
-	/*Expr_Node * n1 = new Number_Node(5);
-	Expr_Node * n2 = new Number_Node(4);
-	Add_Node * expr = new Add_Node ();
-	expr->setLeft(n1);
-	expr->setRight(n2);
-	*/
 	Expr_Tree_Builder * equ = new Expr_Tree_Builder();
 	equ->build_number(5);
 	equ->build_add_operator();
 	equ->build_number (4);
+	equ->build_multiply_operator();
+	equ->inOrder(equ->get_expression());
+	equ->build_number (6);
 	int result = equ->get_expression()->eval();
+	equ->inOrder(equ->get_expression());
 	std::cout<<result<<std::endl;
 	delete equ;
 }
