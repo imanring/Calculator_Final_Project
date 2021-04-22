@@ -6,7 +6,7 @@ ops_ (Stack<Binary_Expr_Node *>())
 { }
 
 Calculator::~Calculator () {
-	delete get_Expression();
+	delete get_expression();
 }
 
 void Calculator::addOp (Binary_Expr_Node * op) {
@@ -27,10 +27,11 @@ void Calculator::addNode (Expr_Node * node) {
 }
 
 void Calculator::print() {
+	std::cout<<"Calculator: "<<std::endl;
 	nodes_.top()->printName();
 }
 
-int Calculator::get_expression () {
+Expr_Node * Calculator::get_expression () {
 	while (!ops_.is_empty()) {
 		ops_.top()->setRight(nodes_.top());
 		nodes_.pop();

@@ -1,6 +1,9 @@
 #ifndef CALCULATOR_H_EXISTS
 #define CALCULATOR_H_EXISTS
 
+#include "Binary_Expr_Node.h"
+#include "Stack.h"
+
 class Calculator {
 public:
 	Calculator ();

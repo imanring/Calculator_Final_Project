@@ -2,45 +2,53 @@
 #include "Expr_Tree_Builder.h"
 
 Expr_Tree_Builder::Expr_Tree_Builder ()
-: expressions (Stack<Calculator>())
+: expressions (Stack<Calculator *>())
 {
-	expressions.push(Calculator());
+	expressions.push(new Calculator());
+}
+
+Expr_Tree_Builder::~Expr_Tree_Builder () {
+	while (!expressions.is_empty()) {
+		delete expressions.top();
+		expressions.pop();
+	}
 }
 
 void Expr_Tree_Builder::build_number (int num) {
-	expressions.top().addNode(new Number_Node(num));
+	expressions.top()->addNode(new Number_Node(num));
 }
 
 void Expr_Tree_Builder::build_add_operator () {
-	expressions.top().addOp(new Add_Node());
+	expressions.top()->addOp(new Add_Node());
 }
 
 void Expr_Tree_Builder::build_subtract_operator () {
-	expressions.top().addOp(new Subtract_Node());
+	expressions.top()->addOp(new Subtract_Node());
 }
 
 void Expr_Tree_Builder::build_multiply_operator () {
-	expressions.top().addOp(new Multiply_Node());
+	expressions.top()->addOp(new Multiply_Node());
 }
 
 void Expr_Tree_Builder::build_divide_operator () {
-	expressions.top().addOp(new Divide_Node());
+	expressions.top()->addOp(new Divide_Node());
 }
 
 void Expr_Tree_Builder::build_modulus_operator () {
-	expressions.top().addOp(new Modulus_Node());
+	expressions.top()->addOp(new Modulus_Node());
 }
 
 void Expr_Tree_Builder::build_open_parenthesis () {
-	expressions.push(Calculator());
+	expressions.push(new Calculator());
 }
 
 void Expr_Tree_Builder::build_close_parenthesis () {
-	Expr_Node * head = expressions.top().get_expression();
+	Expr_Node * head = expressions.top()->get_expression();
+	//delete expressions.top();
 	expressions.pop();
-	expressions.top().addNode(head);
+	expressions.top()->addNode(head);
 }
 
 Expr_Node * Expr_Tree_Builder::get_expression () {
-	return expressions.top().get_expression();
+	return expressions.top()->get_expression();
 }

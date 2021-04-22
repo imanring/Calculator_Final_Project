@@ -20,7 +20,7 @@ public:
 	void build_close_parenthesis ();
 	Expr_Node * get_expression ();
 private:
-	Stack<Calculator> expressions;
+	Stack<Calculator *> expressions;
 };
 
 #endif

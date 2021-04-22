@@ -23,8 +23,9 @@ template <typename T>
 inline
 T Stack <T>::top (void) const
 {
-	if (head == -1)
+	if (head == -1) {
 		throw empty_exception();
+	}
 	return arr.get(head);
 }
 

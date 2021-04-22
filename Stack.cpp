@@ -15,7 +15,6 @@ Stack <T>::Stack (void)
 : arr (Array<T>()),
 head (-1)
 {
-
 }
 
 //
@@ -53,7 +52,6 @@ void Stack <T>::push (T element)
 		head++;
 		arr.set(head, element);
 	} else{
-		//double to size
 		arr.resize(arr.size()*2+1);
 		head++;
 		arr.set(head, element);
