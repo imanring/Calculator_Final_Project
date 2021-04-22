@@ -17,3 +17,7 @@ int Number_Node::precedence() {
 void Number_Node::printName() {
 	std::cout<<"Number: "<<val_<<std::endl;
 }
+
+void Number_Node::accept(Expr_Node_Visitor * visitor) {
+	visitor->visit_number (this);
+}

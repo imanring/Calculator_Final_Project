@@ -10,5 +10,6 @@ public:
 	int eval ();
 	int precedence();
 	void printName();
+	void accept(Expr_Node_Visitor * visitor);
 };
 #endif
