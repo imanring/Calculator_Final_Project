@@ -9,6 +9,7 @@ project (Calculator) {
 		Expr_Builder.cpp
 		Expr_Tree_Builder.cpp
 		Calculator.cpp
+		Expr_Node_Visitor.h
 		Eval_Expr_Tree.cpp
 		Expr_Node.cpp
 		Binary_Expr_Node.cpp
@@ -20,9 +21,6 @@ project (Calculator) {
 		Number_Node.cpp
 		main.cpp
 		//files
-	}
-	Header_Files {
-		Expr_Node_Visitor.h
 	}
 	Template_Files {
 		Array_Base.cpp
