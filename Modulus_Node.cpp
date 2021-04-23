@@ -14,3 +14,7 @@ int Modulus_Node::precedence() {
 void Modulus_Node::printName() {
 	std::cout<<"Modulus Command"<<std::endl;
 }
+
+void Modulus_Node::accept(Expr_Node_Visitor * visitor) {
+	visitor->visit_modulus_operator(this);
+}

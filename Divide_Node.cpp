@@ -14,3 +14,7 @@ int Divide_Node::precedence() {
 void Divide_Node::printName() {
 	std::cout<<"Divide Command"<<std::endl;
 }
+
+void Divide_Node::accept(Expr_Node_Visitor * visitor) {
+	visitor->visit_divide_operator(this);
+}

@@ -8,6 +8,8 @@ project (Calculator) {
 		Expr_Builder.cpp
 		Expr_Tree_Builder.cpp
 		Calculator.cpp
+		Expr_Node_Visitor.cpp
+		Eval_Expr_Tree.cpp
 		Expr_Node.cpp
 		Binary_Expr_Node.cpp
 		Add_Node.cpp

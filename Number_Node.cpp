@@ -18,6 +18,10 @@ void Number_Node::printName() {
 	std::cout<<"Number: "<<val_<<std::endl;
 }
 
+int Number_Node::getVal() {
+	return val_;
+}
+
 void Number_Node::accept(Expr_Node_Visitor * visitor) {
 	visitor->visit_number (this);
 }

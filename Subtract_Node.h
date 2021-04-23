@@ -12,6 +12,8 @@ public:
 	int precedence();
 
 	void printName();
+
+	void accept(Epxr_Node_Visitor * visitor);
 };
 
 #endif

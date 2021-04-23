@@ -14,6 +14,8 @@ public:
 	int precedence();
 
 	void printName();
+	
+	int getVal();
 
 	void accept (Expr_Node_Visitor * visitor);
 private:
