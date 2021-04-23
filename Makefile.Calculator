@@ -31,8 +31,8 @@ LIBPREFIX     = lib
 LIBSUFFIX     = 
 GENFLAGS      = -O
 LDLIBS        = -ldl $(subst lib,-l,$(sort $(basename $(notdir $(wildcard /usr/lib/librt.so /lib/librt.so))))) -lpthread
-OBJS          = Expr_Builder$(OBJEXT) Expr_Tree_Builder$(OBJEXT) Calculator$(OBJEXT) Expr_Node$(OBJEXT) Binary_Expr_Node$(OBJEXT) Add_Node$(OBJEXT) Subtract_Node$(OBJEXT) Multiply_Node$(OBJEXT) Divide_Node$(OBJEXT) Modulus_Node$(OBJEXT) Number_Node$(OBJEXT) main$(OBJEXT)
-SRC           = Expr_Builder.cpp Expr_Tree_Builder.cpp Calculator.cpp Expr_Node.cpp Binary_Expr_Node.cpp Add_Node.cpp Subtract_Node.cpp Multiply_Node.cpp Divide_Node.cpp Modulus_Node.cpp Number_Node.cpp main.cpp
+OBJS          = Expr_Builder$(OBJEXT) Expr_Tree_Builder$(OBJEXT) Calculator$(OBJEXT) Eval_Expr_Tree$(OBJEXT) Expr_Node$(OBJEXT) Binary_Expr_Node$(OBJEXT) Add_Node$(OBJEXT) Subtract_Node$(OBJEXT) Multiply_Node$(OBJEXT) Divide_Node$(OBJEXT) Modulus_Node$(OBJEXT) Number_Node$(OBJEXT) main$(OBJEXT)
+SRC           = Expr_Builder.cpp Expr_Tree_Builder.cpp Calculator.cpp Eval_Expr_Tree.cpp Expr_Node.cpp Binary_Expr_Node.cpp Add_Node.cpp Subtract_Node.cpp Multiply_Node.cpp Divide_Node.cpp Modulus_Node.cpp Number_Node.cpp main.cpp
 LINK.cc       = $(LD) $(LDFLAGS)
 EXPORTFLAGS   = 
 DEPLIBS       = $(foreach lib, , $(foreach libpath, ., $(wildcard $(libpath)/lib$(lib).a)))
@@ -58,6 +58,9 @@ Expr_Tree_Builder$(OBJEXT): Expr_Tree_Builder.cpp
 
 Calculator$(OBJEXT): Calculator.cpp
 	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) Calculator.cpp
+
+Eval_Expr_Tree$(OBJEXT): Eval_Expr_Tree.cpp
+	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) Eval_Expr_Tree.cpp
 
 Expr_Node$(OBJEXT): Expr_Node.cpp
 	$(COMPILE.cc) $(EXPORTFLAGS) $(OUTPUT_OPTION) Expr_Node.cpp
