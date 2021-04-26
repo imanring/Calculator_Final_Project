@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <sstream>
+#include "Expr_Node_Visitor.h"
 #include "Add_Node.h"
 #include "Subtract_Node.h"
 #include "Multiply_Node.h"
@@ -8,6 +9,8 @@
 #include "Modulus_Node.h"
 #include "Number_Node.h"
 #include "Expr_Tree_Builder.h"
+//#include "Expr_Node_Visitor.h"
+
 
 void printStack(Stack <std::string> cmds) {
 	while (!cmds.is_empty()) {
