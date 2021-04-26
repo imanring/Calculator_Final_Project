@@ -17,8 +17,8 @@ project (Calculator) {
 		Divide_Node.cpp
 		Modulus_Node.cpp
 		Number_Node.cpp
-		//Expr_Node_Visitor.cpp
-		//Eval_Expr_Tree.cpp
+		Expr_Node_Visitor.cpp
+		Eval_Expr_Tree.cpp
 		main.cpp
 		//files
 	}
