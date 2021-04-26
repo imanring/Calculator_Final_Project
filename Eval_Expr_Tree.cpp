@@ -1,4 +1,10 @@
 #include "Eval_Exrp_Tree.h"
+#include "Add_Node.h"
+#include "Subtract_Node.h"
+#include "Multiply_Node.h"
+#include "Divide_Node.h"
+#include "Modulus_Node.h"
+#include "Number_Node.h"
 
 Eval_Expr_Tree::Eval_Expr_Tree()
 : result_ (0) { }

@@ -1,4 +1,5 @@
 #include "Modulus_Node.h"
+#include "Expr_Node_Visitor.h"
 
 Modulus_Node::Modulus_Node ()
 { }
@@ -18,7 +19,7 @@ void Modulus_Node::printName() {
 	std::cout<<"Right: ";
 	this->right_->printName();
 }
-/*
+
 void Modulus_Node::accept(Expr_Node_Visitor * visitor) {
 	visitor->visit_modulus_operator(this);
-}*/
+}

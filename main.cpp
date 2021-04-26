@@ -9,7 +9,7 @@
 #include "Modulus_Node.h"
 #include "Number_Node.h"
 #include "Expr_Tree_Builder.h"
-//#include "Expr_Node_Visitor.h"
+#include "Eval_Expr_Tree.h"
 
 
 void printStack(Stack <std::string> cmds) {
@@ -68,8 +68,20 @@ int create_expression(Stack<std::string> equation){
 		}
 		equation.pop();
 	}
-	equ.get_expression()->printName();
-	return equ.get_expression()->eval();
+	try {
+		equ.get_expression()->printName();
+		std::cout<<"returning val"<<std::endl;
+		Expr_Node * n = equ.get_expression();
+		Eval_Expr_Tree * v = new Eval_Expr_Tree();
+		n->accept(v);
+		int r = v->result();
+		delete v;
+		return r;
+	} catch (std::exception e) {
+		std::cout<<"You are annoying"<<std::endl;
+		//return create_expression(readCommand());
+		throw "Error... Please enter a valid equation";
+	}
 }
 
 
@@ -78,23 +90,15 @@ int main () {
 	bool keepGoing = true;
 	while (keepGoing) {
 		try {
+			std::cout<<"Enter equation: "<<std::endl;
 			std::cout<<create_expression(readCommand())<<std::endl;
 		} catch (int quit) {
 			keepGoing = false;
 		} catch (const char * e) {
 			std::cout<<e<<std::endl;
+		} catch (...) {
+			std::cout << "You annoying individual. You entered an invalid equation"<<std::endl;
 		}
 	}
 	//*/
-	/*Expr_Tree_Builder equ = Expr_Tree_Builder();
-	equ.build_number(8);
-	equ.build_add_operator();
-	equ.build_number (0);
-	//equ.build_modulus_operator();
-	//equ.build_number (6);
-	//equ.get_expression();
-	int result = equ.get_expression()->eval();
-	std::cout<<result<<std::endl;
-	//delete equ;
-	*/
 }

@@ -1,4 +1,5 @@
 #include "Add_Node.h"
+#include "Expr_Node_Visitor.h"
 
 Add_Node::Add_Node ()
 { }
@@ -24,7 +25,7 @@ void Add_Node::printName() {
 	std::cout<<"Right: "<<std::endl;
 	right_->printName();
 }
-/*
+
 void Add_Node::accept(Expr_Node_Visitor * visitor) {
 	visitor->visit_add_operator(this);
-}*/
+}

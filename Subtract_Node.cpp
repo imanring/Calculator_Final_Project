@@ -1,4 +1,5 @@
 #include "Subtract_Node.h"
+#include "Expr_Node_Visitor.h"
 
 Subtract_Node::Subtract_Node ()
 { }
@@ -18,7 +19,7 @@ void Subtract_Node::printName() {
 	std::cout<<"Right: ";
 	this->right_->printName();
 }
-/*
+
 void Subtract_Node::accept(Expr_Node_Visitor * visitor) {
 	visitor->visit_subtract_operator(this);
-}*/
+}
