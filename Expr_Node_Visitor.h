@@ -11,7 +11,7 @@ class Number_Node;
 
 class Expr_Node_Visitor {
 public:
-	virtual ~Expr_Node_Visitor();
+	~Expr_Node_Visitor();
 	virtual void visit_add_operator (const Add_Node * add) = 0;
 	virtual void visit_subtract_operator (const Subtract_Node * subtract) = 0;
 	virtual void visit_multiply_operator (const Multiply_Node * mult) = 0;

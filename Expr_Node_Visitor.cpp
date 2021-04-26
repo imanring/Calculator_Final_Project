@@ -6,5 +6,5 @@
 #include "Modulus_Node.h"
 #include "Number_Node.h"
 
-virtual Expr_Node_Visitor::~Expr_Node_Visitor() {}
+Expr_Node_Visitor::~Expr_Node_Visitor() {}
 
