@@ -1,10 +1,13 @@
 #ifndef EXPR_NODE_VISITOR_H_EXISTS
 #define EXPR_NODE_VISITOR_H_EXISTS
 
+#include "Binary_Expr_Node.h"
 #include "Add_Node.h"
 #include "Subtract_Node.h"
+#include "Multiply_Node.h"
+#include "Divide_Node.h"
+#include "Modulus_Node.h"
 #include "Number_Node.h"
-
 
 class Expr_Node_Visitor {
 public:

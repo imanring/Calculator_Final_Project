@@ -18,7 +18,7 @@ void Multiply_Node::printName() {
 	std::cout<<"Right: "<<std::endl;
 	right_->printName();
 }
-
+/*
 void Multiply_Node::accept(Expr_Node_Visitor * visitor) {
 	visitor->visit_multiply_operator(this);
-}
+}*/

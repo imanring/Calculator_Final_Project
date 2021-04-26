@@ -17,7 +17,7 @@ public:
 	
 	int getVal();
 
-	void accept (Expr_Node_Visitor * visitor);
+	//void accept (Expr_Node_Visitor * visitor);
 private:
 	int val_;
 };

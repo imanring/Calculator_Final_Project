@@ -1,4 +1,3 @@
-//#include <memory>
 #include "Expr_Tree_Builder.h"
 
 Expr_Tree_Builder::Expr_Tree_Builder ()
@@ -44,7 +43,6 @@ void Expr_Tree_Builder::build_open_parenthesis () {
 
 void Expr_Tree_Builder::build_close_parenthesis () {
 	Expr_Node * head = expressions.top()->get_expression();
-	//delete expressions.top();
 	expressions.pop();
 	expressions.top()->addNode(head);
 }

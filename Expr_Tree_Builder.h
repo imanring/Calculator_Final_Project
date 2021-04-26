@@ -3,6 +3,7 @@
 
 #include "Expr_Builder.h"
 #include "Expr_Node.h"
+#include "Binary_Expr_Node.h"
 #include "Stack.h"
 #include "Calculator.h"
 

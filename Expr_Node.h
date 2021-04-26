@@ -12,7 +12,7 @@ public:
 	virtual int precedence() = 0;
 	// for testing purposes
 	virtual void printName() = 0;
-	virtual void accept(Expr_Node_Visitor * visitor) = 0;
+	//virtual void accept(Expr_Node_Visitor * visitor) = 0;
 };
 
 #endif

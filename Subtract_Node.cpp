@@ -14,7 +14,7 @@ int Subtract_Node::precedence() {
 void Subtract_Node::printName() {
 	std::cout<<"Subtract Command"<<std::endl;
 }
-
+/*
 void Subtract_Node::accept(Expr_Node_Visitor * visitor) {
 	visitor->visit_subtract_operator(this);
-}
+}*/
