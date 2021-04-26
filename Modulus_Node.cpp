@@ -13,6 +13,10 @@ int Modulus_Node::precedence() {
 
 void Modulus_Node::printName() {
 	std::cout<<"Modulus Command"<<std::endl;
+	std::cout<<"Left: ";
+	this->left_->printName();
+	std::cout<<"Right: ";
+	this->right_->printName();
 }
 /*
 void Modulus_Node::accept(Expr_Node_Visitor * visitor) {

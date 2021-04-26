@@ -13,6 +13,10 @@ int Subtract_Node::precedence() {
 
 void Subtract_Node::printName() {
 	std::cout<<"Subtract Command"<<std::endl;
+	std::cout<<"Left: ";
+	this->left_->printName();
+	std::cout<<"Right: ";
+	this->right_->printName();
 }
 /*
 void Subtract_Node::accept(Expr_Node_Visitor * visitor) {

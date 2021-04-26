@@ -10,16 +10,10 @@ Calculator::~Calculator () {
 }
 
 void Calculator::addOp (Binary_Expr_Node * op) {
-	Stack<Binary_Expr_Node *> temp = Stack<Binary_Expr_Node *>();
-	while (!ops_.is_empty() && ops_.top()->precedence()>op->precedence()) {
-		temp.push(ops_.top());
-		ops_.pop();
+	if (!ops_.is_empty() && ops_.top()->precedence() >= op->precedence()) {
+		get_expression();
 	}
 	ops_.push(op);
-	while (!temp.is_empty()) {
-		ops_.push(temp.top());
-		temp.pop();
-	}	
 }
 
 void Calculator::addNode (Expr_Node * node) {
@@ -38,7 +32,6 @@ Expr_Node * Calculator::get_expression () {
 		ops_.top()->setLeft(nodes_.top());
 		nodes_.pop();
 		nodes_.push(ops_.top());
-		ops_.top()->printName();
 		ops_.pop();
 	}
 	return nodes_.top();

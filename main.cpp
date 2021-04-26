@@ -65,6 +65,7 @@ int create_expression(Stack<std::string> equation){
 		}
 		equation.pop();
 	}
+	equ.get_expression()->printName();
 	return equ.get_expression()->eval();
 }
 
