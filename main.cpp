@@ -38,7 +38,7 @@ Stack <std::string> readCommand() {
 	return splitEqu;
 }
 
-int create_expression(Stack<std::string> equation){
+int create_expression(Stack<std::string> equation) {
 	Expr_Tree_Builder equ = Expr_Tree_Builder();
 	int num;
 	// test to see if the value is an int
@@ -68,20 +68,19 @@ int create_expression(Stack<std::string> equation){
 		}
 		equation.pop();
 	}
-	try {
-		equ.get_expression()->printName();
-		std::cout<<"returning val"<<std::endl;
+	//try {
+		//equ.get_expression()->printName();
 		Expr_Node * n = equ.get_expression();
 		Eval_Expr_Tree * v = new Eval_Expr_Tree();
 		n->accept(v);
 		int r = v->result();
 		delete v;
 		return r;
-	} catch (std::exception e) {
+	/*} catch (std::exception e) {
 		std::cout<<"You are annoying"<<std::endl;
 		//return create_expression(readCommand());
 		throw "Error... Please enter a valid equation";
-	}
+	}*/
 }
 
 
@@ -94,8 +93,8 @@ int main () {
 			std::cout<<create_expression(readCommand())<<std::endl;
 		} catch (int quit) {
 			keepGoing = false;
-		} catch (const char * e) {
-			std::cout<<e<<std::endl;
+		} catch (std::invalid_argument & e) {
+			std::cout<<"Please enter a valid equation"<<std::endl;
 		} catch (...) {
 			std::cout << "You annoying individual. You entered an invalid equation"<<std::endl;
 		}

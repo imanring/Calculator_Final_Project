@@ -12,12 +12,12 @@ class Number_Node;
 class Expr_Node_Visitor {
 public:
 	~Expr_Node_Visitor();
-	virtual void visit_add_operator (const Add_Node * add) = 0;
-	virtual void visit_subtract_operator (const Subtract_Node * subtract) = 0;
-	virtual void visit_multiply_operator (const Multiply_Node * mult) = 0;
-	virtual void visit_divide_operator (const Divide_Node * divide) = 0;
-	virtual void visit_modulus_operator(const Modulus_Node * mod) = 0;
-	virtual void visit_number (const Number_Node * num) = 0;
+	virtual void visit_add_operator (Add_Node * add) = 0;
+	virtual void visit_subtract_operator (Subtract_Node * subtract) = 0;
+	virtual void visit_multiply_operator (Multiply_Node * mult) = 0;
+	virtual void visit_divide_operator (Divide_Node * divide) = 0;
+	virtual void visit_modulus_operator(Modulus_Node * mod) = 0;
+	virtual void visit_number (Number_Node * num) = 0;
 };
 
 #endif

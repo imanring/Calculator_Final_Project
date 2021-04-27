@@ -6,7 +6,11 @@ ops_ (Stack<Binary_Expr_Node *>())
 { }
 
 Calculator::~Calculator () {
-	delete get_expression();
+	try {
+		Expr_Node * n = get_expression();
+		delete n;
+	} catch (std::exception & e) {
+	}
 }
 
 void Calculator::addOp (Binary_Expr_Node * op) {
